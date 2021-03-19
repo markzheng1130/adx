@@ -5,7 +5,7 @@ kcsb = KustoConnectionStringBuilder.with_az_cli_authentication(cluster)
 client = KustoClient(kcsb)
 
 db = "TestDatabase"
-query = "StormEvents | take 3"
+query = "TestTable | take 3"
 
 response = client.execute(db, query)
 
