@@ -4,8 +4,8 @@ from azure.eventhub import EventData
 
 async def run():
     event_hub_name = 'test-hub'
-    connecting_string = 'Endpoint=sb://markzheng1130eventhubnamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=iPbqBo8Yx5guLC/o7DAuwf2qNX136u+byD3rabTqbhA='
-    producer = EventHubProducerClient.from_connection_string(conn_str=connecting_string, eventhub_name=event_hub_name)
+    connecting_string = 'Endpoint=sb://markzheng1130eventhubnamespace.servicebus.windows.net/;SharedAccessKeyName=my-sas;SharedAccessKey=bS6Dcj4WOqDaCe+Y5SyxJQNFQ4O6VTY8XMEoV1EgXMI=;EntityPath=test-hub'
+    producer = EventHubProducerClient.from_connection_string(conn_str=connecting_string, eventhub_name=event_hub_name, debug=True)
     async with producer:
         event_data_batch = await producer.create_batch()
 

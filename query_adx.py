@@ -9,5 +9,7 @@ query = "TestTable | take 3"
 
 response = client.execute(db, query)
 
+print(response)
+
 for row in response.primary_results[0]:
     print(f'{row}')
